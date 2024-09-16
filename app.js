@@ -44,6 +44,11 @@ app.get('/', (req, res) => {
   `);
 });
 
+app.get("/status", (req, res) => {
+  res.json({ status: "OK" });
+});
+
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
