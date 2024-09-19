@@ -19,5 +19,6 @@ COPY . .
 EXPOSE 3000
 
 # CMD [ "node", "app.js" ]
+CMD [ "npm", "run","pm2" ]
 # CMD [ "pm2", "start", "--public", "7wnq70sl921wgnk", "--secret", "pk6ql0st8coh6ff", "app.js" ]
-CMD [ "pm2", "start", "app.js" ]
+# CMD [ "pm2", "start", "app.js" ]
