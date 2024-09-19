@@ -4,4 +4,5 @@ module.exports = [{
   exec_mode: 'cluster',
   instances: 1
 }]
+
 console.log(process.env.PM2_PUBLIC_KEY)
