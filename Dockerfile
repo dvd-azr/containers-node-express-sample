@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 RUN npm install pm2 -g
 # RUN pm2 link 7wnq70sl921wgnk pk6ql0st8coh6ff
-RUN pm2 link ${PM2_PUBLIC_KEY} ${PM2_SECRET_KEY}
+# RUN pm2 link ${PM2_PUBLIC_KEY} ${PM2_SECRET_KEY}
 
 # Bundle app source
 COPY . .
@@ -23,4 +23,7 @@ EXPOSE 3000
 # CMD [ "npm", "run","pm2" ]
 # CMD [ "pm2", "start", "--public", "7wnq70sl921wgnk", "--secret", "pk6ql0st8coh6ff", "app.js" ]
 # CMD [ "pm2", "start", "app.js" ]
-CMD [ "pm2-runtime", "ecosystem.config.js" ]
+
+
+# CMD [ "pm2-runtime", "ecosystem.config.js" ]
+CMD [ "pm2-runtime", "--public", "${process.env.PM2_PUBLIC_KEY}", "--secret", "${process.env.PM2_SECRET_KEY}", "app.js" ]
