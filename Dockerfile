@@ -26,4 +26,4 @@ EXPOSE 3000
 
 
 # CMD [ "pm2-runtime", "ecosystem.config.js" ]
-CMD [ "pm2-runtime", "--public", "${process.env.PM2_PUBLIC_KEY}", "--secret", "${process.env.PM2_SECRET_KEY}", "app.js" ]
+CMD [ "pm2-runtime", "--public=${process.env.PM2_PUBLIC_KEY --secret=${process.env.PM2_SECRET_KEY} app.js" ]
