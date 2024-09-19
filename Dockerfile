@@ -10,7 +10,8 @@ COPY package*.json ./
 
 RUN npm install
 RUN npm install pm2 -g
-RUN pm2 link 7wnq70sl921wgnk pk6ql0st8coh6ff
+# RUN pm2 link 7wnq70sl921wgnk pk6ql0st8coh6ff
+RUN pm2 link env(PM2_PUBLIC_KEY) env(PM2_SECRET_KEY)
 
 # Bundle app source
 COPY . .
